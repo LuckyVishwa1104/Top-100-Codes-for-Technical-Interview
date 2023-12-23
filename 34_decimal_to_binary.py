@@ -1,6 +1,6 @@
 # Python program to convert decimal to binary
 
-# method 1 - using brut-force(mind and sence) and iteration
+# method 1 - using brut-force(mind and sense) and iteration
 try:
     n=int(input("Enter the decimal number :"))
     string=""
