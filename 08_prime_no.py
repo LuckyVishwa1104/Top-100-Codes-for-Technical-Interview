@@ -40,3 +40,15 @@ try:
     pass
 except:
     print("Enter valid numneric value.")
+
+# method 4 - using the number of divisor
+# prime number have only two divisors
+n=int(input("Enter the number :"))
+cnt=0
+for i in range(1,n+1):
+    if n%i == 0:
+        cnt+=1
+if cnt==2:
+    print(n,"is a PRIME number.")
+else:
+    print(n,"is not a prime number.")
