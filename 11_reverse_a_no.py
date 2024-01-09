@@ -7,7 +7,7 @@ try:
 except:
     print("Enter a valid number")
 
-# # # mehtod 2 - using string cancatenation and for loop
+# mehtod 2 - using string cancatenation and for loop
 try:
     n=input()
     rs=""
@@ -17,7 +17,7 @@ try:
 except:
     print("ENter valid number.")
 
-# # method 3 - using array and brut force
+# method 3 - using array and brut force
 try:
     num=int(input())
     from array import *
@@ -30,19 +30,7 @@ try:
 except:
     ("Enter a vlaid number.")
 
-# method 4 - using recurssion
-# try:
-#     num=int(input())
-#     arr2=array("i",[])
-#     for j in str(num):
-#         arr2.append(int(j))
-#     def rev(arr2):
-        
-#         pass
-#     pass
-# except:
-#     print("Enter the valid number.")
-
+# method 4 -using recursion
 try:
     n=input("Enter the number :")
     i=1
