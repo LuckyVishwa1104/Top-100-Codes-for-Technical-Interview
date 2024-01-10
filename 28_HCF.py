@@ -17,7 +17,5 @@ def hcf_fun(i):
         global hcf
         hcf=i
     hcf_fun(i+1)
-    pass
 hcf_fun(1)
 print(hcf,"is HCF")
-    
