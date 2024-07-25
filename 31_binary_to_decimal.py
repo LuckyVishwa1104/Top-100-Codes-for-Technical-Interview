@@ -14,7 +14,7 @@ except:
 
 # method 2 - using bubilt-in funciton
 # int(num,2) - this function is used to convert binary input into decimal value
-# it accept two parameters first is the number and second is the identifier(2 - for binary, 8 - for octal, 15 - for hexa-decimal)
+# it accept two parameters first is the number in string data-type and second is the identifier(2 - for binary, 8 - for octal, 16 - for hexa-decimal)
 
 try:
     n=int(input("Enter the binary number :"))

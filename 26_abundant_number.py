@@ -1,4 +1,4 @@
-# Python program to check whether a number is a abundant number or not]
+# Python program to check whether a number is a abundant number or not
 # Abundant number - a number is abundant if the number is less than sum of its factors except the number itself.
 
 # method 1 - using iteration
