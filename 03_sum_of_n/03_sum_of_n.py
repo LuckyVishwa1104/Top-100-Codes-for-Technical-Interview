@@ -22,3 +22,26 @@ try:
     print(summ(num))
 except:
     print("Enter a valid Number")
+
+# method 3: function based approach
+
+def sum_n_numbers(num):
+    return ((num * (num + 1)) // 2)
+
+try:
+    num = int(input('ENTER A VALID INTEGER VALUE : '))
+
+    if (num < 0):
+        print("Enter a positive Integer value.")
+    else:
+        result = sum_n_numbers(num)
+        print(f"Sum of first {num} numbers : {result}")
+
+except ValueError as e:
+    print("Enter a valid Integer value.")
+    print(f"Exception caught : {e}")
+
+except Exception as e:
+    print("Some unexpected error occurred.")
+    print(f"Exception caught : {e}")
+
