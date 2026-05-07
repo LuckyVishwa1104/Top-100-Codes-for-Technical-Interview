@@ -1,4 +1,4 @@
-# python program to find greatestbetween two numbers
+# # python program to find greatestbetween two numbers
 
 # method 1 - tradtional method
 try:
@@ -21,4 +21,27 @@ try:
 except:
     print("Enter a valid numeric value!")
 
+
+def greatest_among_two(a, b):
+    if (a < b):
+        return b
+    else :
+        return a
     
+try:
+    a = int(input('Enter integer value : '))
+    b = int(input("Enter integer value : "))
+
+    if (a == b):
+        print("Number are equal")
+    else:
+        result = greatest_among_two(a, b)
+        print(f"Greatest number is {result}")
+
+except ValueError as e:
+    print(f"Invalid Input : {e}")
+    
+except Exception as e:
+    print(f"Exception caught : {e}")
+    
+
