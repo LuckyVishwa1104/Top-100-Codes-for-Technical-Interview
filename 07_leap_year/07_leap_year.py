@@ -30,3 +30,31 @@ try:
 except:
     print("Enter valid Year.")
 
+# method 4 - using function based approach
+
+def isLeapYear(year):
+    if (year % 400 == 0):
+        return True
+
+    elif (year % 100 == 0):
+        return False
+
+    elif (year % 4 == 0):
+        return True
+
+    else:
+        return False
+    
+try:
+    year = int(input("Enter year : "))
+    if (isLeapYear(year)):
+        print(f"{year} is a leap year")
+    else:
+        print(f"{year} is not a leap year")
+
+except ValueError as e:
+    print(f"Invalid input : {e}")
+
+except Exception as e:
+    print(f"Exceptin caught : {e}")
+
