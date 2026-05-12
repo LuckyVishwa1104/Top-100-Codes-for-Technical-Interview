@@ -52,3 +52,30 @@ if cnt==2:
     print(n,"is a PRIME number.")
 else:
     print(n,"is not a prime number.")
+
+# method 5 - function based approach
+
+def is_prime(num):
+    for i in range (2, num):
+        if (num % i == 0):
+            return False
+    return True
+        
+
+try:
+    num = int(input("Enter number : "))
+    if (num <= 1):
+        print("Enter a positive integer value number greate than two")
+    else:
+        if(is_prime(num)):
+            print(f"{num} is a prime number")
+        else:
+            print(f"{num} is not a prime number")
+
+except ValueError as e:
+    print(f"Invalid Input : {e}")
+
+except Exception as e:
+    print(f"Exception caught : {e}")
+
+
