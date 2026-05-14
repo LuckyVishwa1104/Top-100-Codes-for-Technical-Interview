@@ -36,3 +36,32 @@ try:
 except:
     print("Enter valid numeric value.")
 
+# method 4 - using function based approach
+
+def sum_of_digit(num):
+    sum_ = 0
+    for i in str(num):
+        sum_ = sum_ + int(i)
+    return sum_
+
+try:
+    while True:
+        num = int(input("Enter a integer value : "))
+        if (num <= 0):
+            print("Enter a positive integer value")
+        else:
+            result = sum_of_digit(num)
+            print(f"Sum of digit of {num} is {result}")
+        
+        choice = input("Do you want to continue the program? (y/n) : ")
+        if (choice.lower() == 'n'):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print(f"Invalid Input : {e}")
+
+except Exception as e:
+    print(f"Exception caught : {e}")
+
+
