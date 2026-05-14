@@ -43,3 +43,35 @@ try:
     print(rev(i))
 except:
     print("Enter a valid number.")
+
+# method 4 - using modulw based approach
+
+def reverse_number(num):
+
+    rev_num = ""
+    i = len(num) - 1
+    while i >= 0:
+        rev_num = rev_num + num[i]
+        i = i - 1
+
+    return rev_num
+
+try:
+
+    while(True):
+        num_ = int(input("Enter the number : "))
+        num = str(num_)
+        result = reverse_number(num)
+        print(f"{num}   ===>   {result}")
+
+        choice = input("Do you want to continue the program? (y/n) : ")
+        if (choice.lower() == 'n'):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print(f"Invalid input : {e}")
+
+except Exception as e:
+    print(f"Exception caught : {e}")
+
