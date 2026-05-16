@@ -48,3 +48,47 @@ try:
         print(f"{s} is not a Armstrong number.")
 except:
     print("Enter a valid number.")
+
+# method 4 - using function based approach
+
+def is_arm_strong(num):
+    num_len = 0
+    while (num // 10 > 0):
+        num_len = num_len + 1
+
+    sum_od_digit = 0
+
+    while (num > 0):
+        sum_od_digit = sum_od_digit + ((num % 10)**num_len)
+        num = num // 10
+
+    return sum_od_digit
+
+try:
+    while(True):
+
+        num = int(input("Enter a positive integer value : "))
+
+        if (num <= 0):
+            print("Enter positive Integer value")
+        else:
+            result = is_arm_strong(num)
+
+            if(result == num):
+                print(f"{num} is a armstrong number")
+            else:
+                print("Not a armstrong number")
+
+        choice = input("Do you want to continue the program? (y/n) : ")
+        if (choice.lower() == 'n'):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print(f"Invalid input : {e}")
+
+except Exception as e:
+    print(f"Exception caught : {e}")
+
+
+
