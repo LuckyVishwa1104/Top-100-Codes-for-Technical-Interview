@@ -28,3 +28,44 @@ try:
             print(n)
 except:
     print("Enter a valid integer number.")
+
+# method 4 - using function based approach
+
+def is_armsrong(num):
+    num_len = 0
+    while (num // 10 > 0):
+        num_len += 1
+    
+    pow = (1/num_len)
+    while (num > 0):
+        sum_of_digit = sum_of_digit + (num % 10)*(pow)
+        num = num // 10
+    
+    return sum_of_digit
+
+try:
+    while (True):
+
+        num = int(input("Enter positive integer number : "))
+
+        if(num > 0):
+            print("Enter positive integer value")
+
+        else:
+            for i in range(1, num + 1):
+                result = is_armsrong(num)
+                if (num == result):
+                    print(num, endline="")
+
+        choice = input("Do you want to continue the program? (y/n) : ")
+        if (choice.lower() == 'n'):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print(f"Invalid Input : {e}")
+
+except Exception as e:
+    print(f"Exception caught : {e}")
+
+
