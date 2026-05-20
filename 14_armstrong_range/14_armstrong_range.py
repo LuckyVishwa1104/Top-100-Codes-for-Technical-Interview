@@ -48,7 +48,7 @@ try:
 
         num = int(input("Enter positive integer number : "))
 
-        if(num > 0):
+        if(num < 0):
             print("Enter positive integer value")
 
         else:
