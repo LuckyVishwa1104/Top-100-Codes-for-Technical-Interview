@@ -26,3 +26,36 @@ try:
         print(fac(n))
 except:
     print("Enter a valid integer value.")
+
+
+# method 4 - module based approach
+
+def factorial(num):
+    fac = 1
+    if (num == 0):
+        return 1
+    else:
+        for i in range (1, num + 1):
+            fac = fac * i
+        return fac
+
+try:
+    while(True):
+        num = int(input("Enter number : "))
+        if (num <0):
+            print("Enter a value greater than or equal to ZERO")
+        else:
+            result = factorial(num)
+            print(result)
+
+        choice = input("Do you want to continue the program? (y/n) : ")
+        if (choice.lower() == 'n'):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print("Invalid Input : {e}")
+    
+except Exception as e:
+    print("Exception caught : {e}")
+
