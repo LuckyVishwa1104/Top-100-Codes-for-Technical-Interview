@@ -31,6 +31,13 @@ void main(){
         List<int> result = fibonacciSeries(num);
         print(result);
       }
+
+      stdout.write("Do you want to continue? (y/n) : ");
+      String choice = stdin.readLineSync()!.toLowerCase();
+      if (choice == 'n') {
+        print("Program Finished");
+        break;
+      }
     }
 
   } on FormatException catch (e) {

@@ -61,6 +61,11 @@ try:
             result = fibonacci_series(num)
             print(result)
 
+        choice = input("Do you want to continue the program? (y/n) : ")
+        if (choice.lower() == 'n'):
+            print("Program finished!")
+            break
+
 except ValueError as e:
     print("Invalid Input : {e}")
 
