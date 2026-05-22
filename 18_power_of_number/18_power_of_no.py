@@ -41,13 +41,19 @@ def power_of_number(num, pow):
     return result
 
 try:
-    num = int(input("Enter number : "))
-    pow = int(input("Enter power factor : "))
-    if (num <= 0 or pow <= 0):
-        print("Enter a positive value")
-    else:
-        result = power_of_number(num,  pow)
-        print(result)
+    while(True):
+        num = int(input("Enter number : "))
+        pow = int(input("Enter power factor : "))
+        if (num <= 0 or pow <= 0):
+            print("Enter a positive value")
+        else:
+            result = power_of_number(num,  pow)
+            print(result)
+
+        choice = input("Do you want to continue the program? (y/n) : ")
+        if (choice.lower() == 'n'):
+            print("Program finished!")
+            break
 
 except ValueError as e:
     print("Invalid Input : {e}")
