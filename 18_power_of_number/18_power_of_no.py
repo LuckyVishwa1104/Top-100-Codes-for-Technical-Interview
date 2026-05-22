@@ -31,3 +31,28 @@ try:
     print(pow(n,m))
 except:
     print("Enter a valid integer value!")
+
+# method 4 - using function based approach 
+
+def power_of_number(num, pow):
+    result = 1
+    for i in range(1,pow+1):
+        result = result * num
+    return result
+
+try:
+    num = int(input("Enter number : "))
+    pow = int(input("Enter power factor : "))
+    if (num <= 0 or pow <= 0):
+        print("Enter a positive value")
+    else:
+        result = power_of_number(num,  pow)
+        print(result)
+
+except ValueError as e:
+    print("Invalid Input : {e}")
+
+except Exception as e:
+    print("Exception caught : {e}")
+
+
