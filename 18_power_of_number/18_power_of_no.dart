@@ -1,10 +1,16 @@
 import 'dart:io';
 
-int powerOfNumber(int num, int pow) {
-  int result = 1;
+double powerOfNumber(int num, int pow) {
+  double result = 1;
 
-  for (int i = 0; i < pow; i++) {
+  int limit = pow.abs();
+
+  for (int i = 0; i < limit; i++) {
     result = result * num;
+  }
+
+  if (pow < 0){
+    return (1 / result);
   }
 
   return result;
@@ -19,10 +25,11 @@ void main() {
       stdout.write("Enter a number : ");
       int pow = int.parse(stdin.readLineSync()!);
 
-      if (num <= 0 || pow <= 0) {
+      if (num == 0 && pow == 0) {
         print("Enter positive integer value");
-      } else {
-        int result = powerOfNumber(num, pow);
+      }
+      else {
+        double result = powerOfNumber(num, pow);
         print(result);
       }
 
