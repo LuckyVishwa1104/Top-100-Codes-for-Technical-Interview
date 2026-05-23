@@ -36,16 +36,21 @@ except:
 
 def power_of_number(num, pow):
     result = 1
-    for i in range(1,pow+1):
+    limit = abs(pow) + 1
+    for i in range(1,limit):
         result = result * num
+    if (pow < 0):
+        return (1 / result)
     return result
 
 try:
     while(True):
+
         num = int(input("Enter number : "))
         pow = int(input("Enter power factor : "))
-        if (num <= 0 or pow <= 0):
-            print("Enter a positive value")
+
+        if(pow == 0 and num == 0):
+            print("Enter positive number and power values.")
         else:
             result = power_of_number(num,  pow)
             print(result)
