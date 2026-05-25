@@ -37,4 +37,53 @@ def p_fac(n):
     p_fac(n+1)
 p_fac(2)
 
+# method 3 - using function based approach
+
+def is_prime(num):
+    for i in range(2, (num // 2) + 1):
+        if (num % i == 0):
+            return False
+    return True
+
+def prime_factor(num):
+
+    factor_list = [i for i in range (2, (num // 2) + 1) if (num % i == 0)]
+
+    factor_list.append(num)
+
+    # for i in range(2, (num // 2) + 1):
+    #     if (num % i == 0):
+    #         factor_list.append(i)
+    
+    prime_factor_list = [ i for i in factor_list if is_prime(i) == True]
+
+    # for i in factor_list:
+    #     if is_prime(i) == True:
+    #         prime_factor.append(i)
+
+    return prime_factor_list
+
+try:
+    while(True):
+        num = int(input("Enter a positive integer value : "))
+        max_limit = 10000
+
+        if (num > max_limit):
+            print("Input to large")
+        elif (num <= 0):
+            print("Enter a positive integer value.")
+        else:
+            resutl = prime_factor(num)
+            print(resutl)
+
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print("Invalid Input : {e}")
+
+except Exception as e:
+    print("Exception caught : {e}")
 
