@@ -38,3 +38,14 @@ try:
         print("Not an Automorphic number.")
 except:
     print("Enter the valid integer value")
+
+
+# method 4 - module based approach
+
+def is_automorphic(num):
+    num_square = num * num
+    while num//10 > 0:
+        if(num%10 == num_square%10):
+            return True
+    return False
+
