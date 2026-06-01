@@ -28,4 +28,42 @@ if n<sum:
 else:
     print("It is not a Abundant number.")
 
+# method 3 - using module based approach
+
+def is_abundant(num):
+    summ = 0
+    for i in range(1, num):
+        if(num % i == 0):
+            summ = summ + i
+    return (num < summ)
+
+try:
+    while(True):
+
+        num = int(input("Enter positive integer value : "))
+        limit  = 1000
+        if (num <= 0):
+            print("Enter positiveinteger value")
+        elif (num > limit):
+            print("Input too large")
+        else:
+            result = is_abundant(num)
+            if(result):
+                print(f"{num} is Abundant number")
+            else:
+                print(f"{num} is not a Abundant number")
+
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print("Invalid Input : {e}")
+
+except ZeroDivisionError as e:
+    print(f"Zero division exception : {e}")
+
+except Exception as e:
+    print("Exception caught : {e}")
 
