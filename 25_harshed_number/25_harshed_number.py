@@ -35,3 +35,44 @@ try:
         print("Not a Harshad number")
 except:
     print("Enter a valid integer value")
+
+#method 4 - module based approach
+
+def isHarshed(num):
+    summ = 0
+    numerator = num
+    while num > 0:
+        summ = summ + (num % 10)
+        num = num // 10
+    if (numerator % summ == 0):
+        return True
+    return False
+
+try:
+    while(True):
+        num = int(input("Enter positive integer value : "))
+        limit  = 1000
+        if (num <= 0):
+            print("Enter positiveinteger value")
+        elif (num > limit):
+            print("Input too large")
+        else:
+            result = isHarshed(num)
+            if(result):
+                print(f"{num} is a Harshed number")
+            else:
+                print(f"{num} is not a Harshed number")
+    
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print("Invalid Input : {e}")
+
+except ZeroDivisionError as e:
+    print(f"Zero division exception : {e}")
+
+except Exception as e:
+    print("Exception caught : {e}")
