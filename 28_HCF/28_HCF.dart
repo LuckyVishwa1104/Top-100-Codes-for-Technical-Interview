@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 // euclidean algorithm - log(min(a,b))
 
@@ -9,6 +10,17 @@ int euclideanHcf(int num1, num2) {
     num2 = temp % num2;
   }
   return num1;
+}
+
+int brutForceHcf(int a, int b){
+  int end = min(a, b);
+  List<int> commonFactor = [];
+  for (int i = 1; i <= end; i++){
+    if (a%i==0 && b%i==0){
+      commonFactor.add(i);
+    }
+  }
+  return commonFactor.reduce(max);
 }
 
 void main() {
@@ -27,7 +39,7 @@ void main() {
       } else if (num1 == 0 || num2 == 0) {
         print("Enter a valid integer value : ");
       } else {
-        int result = euclideanHcf(num1.abs(), num2.abs());
+        int result = brutForceHcf(num1.abs(), num2.abs());
         print("HCF - $result");
       }
 
