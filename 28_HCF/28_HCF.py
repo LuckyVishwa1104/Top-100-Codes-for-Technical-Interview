@@ -57,5 +57,39 @@ except ZeroDivisionError as e:
 except Exception as e:
     print(f"Exception caught : {e}")
 
-# method 5 - 
+# method 5 - euclidean algorothm
+
+def euclidean_hfc(num1, num2):
+    while num2 > 0:
+        temp = num1
+        num1 = num2
+        num2 = temp % num2
+    return num1
+
+try:
+    while(True):
+        num1 = int(input("Enter positive integer value : "))
+        num2 = int(input("Enter positive integer value : "))
+        limit  = 1000
+        if (num1 == 0 or num2 == 0):
+            print("Enter positive integer value")
+        elif (num1 > limit or num2 > limit):
+            print("Input too large")
+        else:
+            result = euclidean_hfc(abs(num1), abs(num2))
+            print(f"HCF - {result}")
+
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print("Invalid Input : {e}")
+
+except ZeroDivisionError as e:
+    print(f"Zero division exception : {e}")
+
+except Exception as e:
+    print(f"Exception caught : {e}")
 
