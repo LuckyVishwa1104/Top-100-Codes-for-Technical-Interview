@@ -19,3 +19,43 @@ def hcf_fun(i):
     hcf_fun(i+1)
 hcf_fun(1)
 print(hcf,"is HCF")
+
+# method 4 - using module based approach
+
+def hcf(num1, num2):
+    end = max([num1,num2])
+    common_factor = []
+    for i in range (1, end+1):
+        if (num1%i==0 and num2%i==0):
+            common_factor.append(i)
+    return max(common_factor)
+
+try:
+    while(True):
+        num1 = int(input("Enter positive integer value : "))
+        num2 = int(input("Enter positive integer value : "))
+        limit  = 1000
+        if (num1 == 0 or num2 == 0):
+            print("Enter positive integer value")
+        elif (num1 > limit or num2 > limit):
+            print("Input too large")
+        else:
+            result = hcf(abs(num1), abs(num2))
+            print(f"HCF - {result}")
+
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print("Invalid Input : {e}")
+
+except ZeroDivisionError as e:
+    print(f"Zero division exception : {e}")
+
+except Exception as e:
+    print(f"Exception caught : {e}")
+
+# method 5 - 
+
