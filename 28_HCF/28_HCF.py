@@ -23,7 +23,7 @@ print(hcf,"is HCF")
 # method 4 - using module based approach
 
 def hcf(num1, num2):
-    end = max([num1,num2])
+    end = min([num1,num2])
     common_factor = []
     for i in range (1, end+1):
         if (num1%i==0 and num2%i==0):
