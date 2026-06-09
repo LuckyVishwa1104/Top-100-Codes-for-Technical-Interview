@@ -56,3 +56,41 @@ hcf_fun(1)
 lcm=(a*b)//hcf
 print(lcm,"is LCM")
 
+# method 4 - using function based approach
+
+def lcm(num1, num2):
+    max = num1 if num1 > num2 else num2
+    while (True):
+        if ((max % num1 == 0) and (max % num2 == 0)):
+            return max
+
+try:
+    while(True):
+        num1 = int(input("Enter positive integer value : "))
+        num2 = int(input("Enter positive integer value : "))
+        limit  = 1000
+
+        if (num1 == 0 or num2 == 0):
+            print("Enter positive integer value")
+        elif (num1 > limit or num2 > limit):
+            print("Input too large")
+        else:
+            result = lcm(num1, num2)
+            print(f"LCM is {result}")
+
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print("Invalid Input : {e}")
+
+except ZeroDivisionError as e:
+    print(f"Zero division exception : {e}")
+
+except Exception as e:
+    print(f"Exception caught : {e}")
+
+
+
