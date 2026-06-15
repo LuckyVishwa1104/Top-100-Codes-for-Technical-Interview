@@ -39,3 +39,42 @@ try:
     print(sum)   
 except:
     print("Enter a valid integer value.")
+
+# method 4 - using module based appraoch
+
+def binary_to_decimal(bin):
+    bin_str = str(bin)
+    bin_str_rev = bin_str[::-1]
+    digit_sum = 0
+    expo = 0
+    for i in bin_str_rev:
+        pow = int(i) * (2**expo)
+        digit_sum = digit_sum + pow
+        expo += 1
+    return digit_sum
+
+try:
+    while(True):
+
+        num = int(input("Enter positive integer value : "))
+        if (num <= 0 or len(str(num)) < 4):
+            print("Enter value in decimal form")
+        else:
+            reuslt = binary_to_decimal(num)
+            print(reuslt)
+
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print(f"Invalid Input : {e}")
+
+except ZeroDivisionError as e:
+    print(f"Zero division exception : {e}")
+
+except Exception as e:
+    print(f"Exception caught : {e}")
+
+
