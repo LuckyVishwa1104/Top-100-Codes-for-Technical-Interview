@@ -20,7 +20,16 @@ def fun1(i):
 fun1(1)
 print(gcd,"is the GCD")
 
-# method 3 - using module based approach
+# method 3 - using euclidean approach based on (num2, num1%num2)
+
+def euclidean_method(num1, num2):
+    while (num2 > 0):
+        temp = num1
+        num1 = num2
+        num2 = temp % num2
+    return num1     
+
+# method 4 - using module based approach
 
 def gdc(num1, num2):
     minn = min([num1,num2])
@@ -39,7 +48,9 @@ try:
             print("Input too large")
         else:
             result = gdc(num1, num2)
+            result_eucledian = euclidean_method(num1, num2)
             print(f"GCD = {result}")
+            print(f"GCD - {result_eucledian}")
     
         choice = input("Do you want to continue the program (y/n) : ")
         if(choice == "n"):

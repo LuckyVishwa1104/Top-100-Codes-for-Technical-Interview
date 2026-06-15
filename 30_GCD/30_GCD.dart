@@ -13,6 +13,15 @@ int gcd(int num1, int num2) {
   return minn;
 }
 
+int eucledianMethod(int num1, int num2) {
+  while (num2 > 0) {
+    int temp = num1;
+    num1 = num2;
+    num2 = temp % num2;
+  }
+  return num1;
+}
+
 void main() {
   try {
     while (true) {
@@ -30,7 +39,9 @@ void main() {
         print("Enter a valid integer value : ");
       } else {
         int result = gcd(num1, num2);
+        int euclideanResult = eucledianMethod(num1, num2);
         print("GCD = $result");
+        print("GCD - $euclideanResult");
       }
 
       stdout.write("Do you want to continue the program (y/n) : ");
