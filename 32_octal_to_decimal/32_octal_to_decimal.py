@@ -36,4 +36,46 @@ try:
     print(octl)
 except:
     print("Enter a valid integer value.")
-    
+
+# method 4 - using module based approach
+
+def octal_to_decimal(octal):
+    pow = 0
+    decimal_sum = 0
+    for i in str(octal)[::-1]:
+        decimal_sum = decimal_sum + (int(i) * (8 ** pow))
+        pow+=1
+    return decimal_sum
+
+def is_valid_octal(num):
+    for i in str(num):
+        if i not in [0,1,2,3,4,5,6,7]:
+            return False
+    return True
+
+try:
+    while(True):
+        num = int(input("Enter positive integer value : "))
+        if (num < 0):
+            print("Please enter a valid octal number.")
+        elif (is_valid_octal(num)):
+            print("Invalid octal number")
+        else:
+            result = octal_to_decimal(num)
+            print(f"Octal {num} = {result} Decimal")
+
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print(f"Invalid Input : {e}")
+
+except ZeroDivisionError as e:
+    print(f"Zero division exception : {e}")
+
+except Exception as e:
+    print(f"Exception caught : {e}")
+
+
