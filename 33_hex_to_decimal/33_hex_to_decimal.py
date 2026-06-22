@@ -71,31 +71,39 @@ except:
 
 # method 5 - using module based approach
 
+HEX_DIGITS = set(list("0123456789ABCDEFabcdef"))
+
 def is_valid_hex_number(hex_num):
     for digit in str(hex_num):
-        if digit not in ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","a","b","c","d","e","f"]:
+        if digit not in HEX_DIGITS:
             return False
     return True
 
 def hex_to_decimal(hex_num):
+    s = str(hex_num).strip()
+    if s.startswith(('0x','0X')):
+        s = s[2:]
+    s = s.upper()
     decimal_number = 0
-    # hex to decimal conversion logic
+    for ch in s:
+        # int(ch, 16) handles 0-9 and A-F
+        decimal_number = decimal_number * 16 + int(ch, 16)
     return decimal_number
 
 try:
     while(True):
-        num = input("Enter positive integer value : ")
+        num = input("Enter positive integer value : ").strip()
 
-        if (num == "0"):
+        if num == "":
             print("Please enter a valid hex number.")
-        elif (is_valid_hex_number(num)):
+        elif not is_valid_hex_number(num):
             print("Invalid hex number")
         else:
             result = hex_to_decimal(num)
             print(result)
-        
+
         choice = input("Do you want to continue the program (y/n) : ")
-        if(choice == "n"):
+        if(choice.lower() == "n"):
             print("Program finished!")
             break
 
