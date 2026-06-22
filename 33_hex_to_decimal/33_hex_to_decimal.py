@@ -71,9 +71,41 @@ except:
 
 # method 5 - using module based approach
 
-def is_hex_number(hex_num):
+def is_valid_hex_number(hex_num):
     for digit in str(hex_num):
         if digit not in ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","a","b","c","d","e","f"]:
             return False
     return True
+
+def hex_to_decimal(hex_num):
+    decimal_number = 0
+    # hex to decimal conversion logic
+    return decimal_number
+
+try:
+    while(True):
+        num = input("Enter positive integer value : ")
+
+        if (num == "0"):
+            print("Please enter a valid hex number.")
+        elif (is_valid_hex_number(num)):
+            print("Invalid hex number")
+        else:
+            result = hex_to_decimal(num)
+            print(result)
+        
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print(f"Invalid Input : {e}")
+
+except ZeroDivisionError as e:
+    print(f"Zero division exception : {e}")
+
+except Exception as e:
+    print(f"Exception caught : {e}")
+
 
