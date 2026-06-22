@@ -68,3 +68,12 @@ try:
     print(deci)
 except:
     print("Enter a valid numeric value.")
+
+# method 5 - using module based approach
+
+def is_hex_number(hex_num):
+    for digit in str(hex_num):
+        if digit not in ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","a","b","c","d","e","f"]:
+            return False
+    return True
+
