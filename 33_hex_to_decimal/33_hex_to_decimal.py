@@ -87,10 +87,10 @@ def hex_to_decimal(hex_num):
     }
     rev_hex_num = str(hex_num)[::-1]
     decimal_number = 0
+    power = 0
     for ch in rev_hex_num:
-        # int(ch, 16) handles 0-9 and A-F
-
-        decimal_number = decimal_number * 16 + int(ch, 16)
+        decimal_number = decimal_number + (hex_num_map[ch] * (16**power))
+        power+=1
     return decimal_number
 
 try:
