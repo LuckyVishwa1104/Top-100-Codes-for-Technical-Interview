@@ -80,13 +80,16 @@ def is_valid_hex_number(hex_num):
     return True
 
 def hex_to_decimal(hex_num):
-    s = str(hex_num).strip()
-    if s.startswith(('0x','0X')):
-        s = s[2:]
-    s = s.upper()
+    hex_num_map = {
+        "0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9,
+        "A": 10, "B": 11, "C": 12, "D": 13, "E": 14, "F": 15,
+        "a": 10, "b": 11, "c": 12, "d": 13, "e": 14, "f": 15
+    }
+    rev_hex_num = str(hex_num)[::-1]
     decimal_number = 0
-    for ch in s:
+    for ch in rev_hex_num:
         # int(ch, 16) handles 0-9 and A-F
+
         decimal_number = decimal_number * 16 + int(ch, 16)
     return decimal_number
 
