@@ -13,7 +13,7 @@ bool isValidHex(String hexNo) {
 
 String reverseString(String num) {
   String revString = "";
-  for (int i = revString.length - 1; i <= 0; i--) {
+  for (int i = num.length - 1; i <= 0; i--) {
     revString = revString + num[i];
   }
   return revString;
