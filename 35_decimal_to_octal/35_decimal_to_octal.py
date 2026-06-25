@@ -39,4 +39,39 @@ try:
     print(oct(n))
 except:
     print("ENter a valid interger vaLUE")
-    
+
+# method 4 - using module based appoach
+
+def decimal_to_octal(decimal):
+    octal_num = ""
+    while (decimal > 0):
+        remainder = decimal % 8
+        decimal = decimal // 8
+        octal_num = octal_num + str(remainder)
+    return octal_num[::-1]
+
+try:
+    while (True):
+        num = int(input("Enter positive integer value : "))
+
+        if (num < 0):
+            print("Enter valid octal number")
+        else:
+            result = decimal_to_octal(num)
+            print(f"Octal {num} = {result} Binary")
+
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice.lower() == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print(f"Invalid Input : {e}")
+
+except ZeroDivisionError as e:
+    print(f"Zero division exception : {e}")
+
+except Exception as e:
+    print(f"Exception caught : {e}")
+
+
