@@ -4,7 +4,7 @@ import 'dart:io';
 
 String reverseString(String num) {
   String revString = "";
-  for (int i = revString.length - 1; i <= 0; i--) {
+  for (int i = revString.length - 1; i >= 0; i--) {
     revString = revString + num[i];
   }
   return revString;
