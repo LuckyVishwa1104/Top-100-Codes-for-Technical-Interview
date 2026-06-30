@@ -54,3 +54,61 @@ try:
     print(octl)
 except:
     print('Some issue occured!!!')
+
+# method 4 - using module based approach
+
+# map for binary and octal linking 
+binary_octal_map = {
+"0" :	0,
+"1" :	1,
+"00" :	0,
+"01" :	1,
+"10" :	2,
+"11" :	3,
+"000" :	0,
+"001" :	1,
+"010" :	2,
+"011" :	3,
+"100" :	4,
+"101" :	5,
+"110" :	6,
+"111" :	7,
+}
+
+# method for binary to octal conversion 
+def binary_to_octal(binary_num):
+    if (binary_num == 0):
+        return 0
+    
+    octal_num = ""
+    while (binary_num > 0):
+        remainder = binary_num % 1000
+        binary_num = binary_num // 1000
+        octal_num = octal_num + str(binary_octal_map[str(remainder)])
+    return octal_num
+
+# driver program to check the logic
+try:
+    while (True):
+        num = int(input("Enter positive integer value : "))
+
+        if (num < 0):
+            print("Enter valid decimal number")
+        else:
+            result = binary_to_octal(num)
+            print(f"Binary {num} = {result} Octal")
+
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice.lower() == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print(f"Invalid Input : {e}")
+
+except ZeroDivisionError as e:
+    print(f"Zero division exception : {e}")
+
+except Exception as e:
+    print(f"Exception caught : {e}")
+
