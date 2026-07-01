@@ -60,6 +60,14 @@ octal_binary_map = {
 	7 : "111",
 }
 
+# method to check valid octal number
+def is_valid_octal(octalNum):
+    octalNumStr = str(octalNum)
+    for i in octalNumStr:
+        if i not in "01234567":
+            return False
+    return True
+
 # method to convert octal to binary 
 def octal_to_binary(octal_num):
 
@@ -80,6 +88,8 @@ try:
 
         if (num < 0):
             print("Enter valid decimal number")
+        elif (is_valid_octal(num)):
+            print("Enter a valid Octal number")
         else:
             result = octal_to_binary(num)
             print(f"Octal {num} = {result} Binary")

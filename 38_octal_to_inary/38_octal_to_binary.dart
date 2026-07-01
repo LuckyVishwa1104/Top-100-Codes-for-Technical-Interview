@@ -1,5 +1,6 @@
 import 'dart:io';
 
+// octal to binary map
 Map<int, String> octalToBinaryMap = {
   0: "000",
   1: "001",
@@ -11,6 +12,18 @@ Map<int, String> octalToBinaryMap = {
   7: "111",
 };
 
+// method to check valid octal number
+bool isValidOctal(int octalNum){
+  String octalNumStr = octalNum.toString();
+  for (int i = 0; i < octalNumStr.length; i++){
+    if (!"01234567".contains(octalNumStr[i])){
+      return false;
+    }
+  }
+  return true;
+}
+
+// method to convert octal to binary
 String octalToBinary(int octal) {
   if (octal == 0) {
     return "0";
@@ -25,6 +38,7 @@ String octalToBinary(int octal) {
   return binaryNum.replaceFirst(RegExp(r'^0+'), '');
 }
 
+// driver program
 void main() {
   try {
     while (true) {
