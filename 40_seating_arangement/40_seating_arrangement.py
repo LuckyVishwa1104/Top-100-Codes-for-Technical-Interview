@@ -33,3 +33,42 @@ try:
 except:
     print("Enter valid values")
 
+# method 3 - using module based approach
+
+# method to find the number of seating arrangement
+def seating_combination(person, seat):
+    combination = 1
+    while (person >= seat):
+        combination = combination * person
+        person -= 1
+    return combination
+
+# driver program 
+try:
+    while (True):
+        num1 = int(input("Enter number of Persons : "))
+        num2 = int(input("Enter number of Seats : "))
+
+        if (num1 <= 0 and num2 <= 0):
+            print("Enter positive integer values")
+
+        elif (num1 < num2):
+            print("Person should be greater than or equal to number of seats")
+        
+        else:
+            result = seating_combination(num1, num2)
+            print(f"{result} ways {num1} person can seat on {num2} seats")
+
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice.lower() == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print(f"Invalid Input : {e}")
+
+except ZeroDivisionError as e:
+    print(f"Zero division exception : {e}")
+
+except Exception as e:
+    print(f"Exception caught : {e}")
