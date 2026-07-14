@@ -22,3 +22,29 @@ for i in range(2,101):
             break
     else:
         print(i,end=" ")
+
+# using module based approach 
+
+def prime_range():
+    return [ n for n in range(2,101) if all(n % d != 0 for d in range(2, int(n ** 0.5) + 1))]
+
+try:
+    while (True):
+
+        result = prime_range()
+        print(result)
+
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice.lower() == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print(f"Invalid Input : {e}")
+
+except ZeroDivisionError as e:
+    print(f"Zero division exception : {e}")
+
+except Exception as e:
+    print(f"Exception caught : {e}")
+
