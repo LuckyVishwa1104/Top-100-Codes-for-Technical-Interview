@@ -82,7 +82,6 @@ def convert_two_digit(num):
         
         return tens[ten]+ " " +ones[one]
 
-
 def convert_three_digit(num):
     if (num < 100):
         return convert_two_digit(num)
