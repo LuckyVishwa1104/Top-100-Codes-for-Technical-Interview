@@ -120,6 +120,10 @@ def conver_six_digit(num):
     if (0 == num):
         return "Zero"
     
+
+    if (1000000 > num):
+        return convert_four_digit(num)
+    
     million = num // 1000000
     remainder = num % 1000000
 
