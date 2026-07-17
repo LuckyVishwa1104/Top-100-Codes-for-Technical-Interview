@@ -34,3 +34,41 @@ try:
 except:
     print("Enter a valid input value.")
     
+# method 4 - using module based approach
+
+def digit_count(number, digit):
+    count = 0
+    while number > 0:
+        a = number % 10
+        if (a == digit):
+            count += 1
+        number //= 10
+    return count
+
+try:
+    while (True):
+        
+        number = int(input("Enter month : "))
+        digit = int(input("Enter year : "))
+
+        if(digit < 0):
+            print("Enter positive value for Digit")
+
+        else:
+            result = digit_count(number, digit)
+            print(f"{digit} occurs {result} times in {number}")
+
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice.lower() == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print(f"Invalid Input : {e}")
+
+except ZeroDivisionError as e:
+    print(f"Zero division exception : {e}")
+
+except Exception as e:
+    print(f"Exception caught : {e}")
+
