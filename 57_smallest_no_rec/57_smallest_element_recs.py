@@ -36,7 +36,7 @@ try:
         smallest_element(num + 1)
     smallest_element(0)
 
-    print(f"Laregest element of {arr} = {smallest}")
+    print(f"Smallest element of {arr} = {smallest}")
 
 except ValueError as ve:
     print(f"Invalid input - {ve}")
