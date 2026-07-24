@@ -19,3 +19,32 @@ try:
 except:
     print("Something went wrong!!!")
 
+# method 2 - using exception and recursion
+
+try:
+    print("Enter space separated element of array")
+    arr = list(map(int, input().split()))
+
+    smallest = arr[0]
+    def smallest_element(num):
+        if (num == (len(arr) - 1)):
+                    return
+        global smallest
+        if (arr[num] < smallest):
+            smallest = num
+        
+        smallest_element(num + 1)
+    smallest_element(0)
+
+    print(f"Laregest element of {arr} = {smallest}")
+
+except ValueError as ve:
+    print(f"Invalid input - {ve}")
+
+except ZeroDivisionError as zde:
+    print(f"Zero Division Exception - {zde}")
+
+except Exception as e:
+    print(f"Exception caught - {e}")
+
+
