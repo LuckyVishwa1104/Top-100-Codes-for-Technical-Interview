@@ -28,3 +28,39 @@ try:
         print(f"{n} is not a prime number.")
 except:
     print("Something went worng!!!")
+
+# method 3 - usign recursion and error-handling
+
+try:
+    while (True):
+        number = int(input("Enter number : "))
+        def prime(num):
+            print(num)
+            if (num >= number):
+                return True
+            if (number % num == 0):
+                return False
+            return prime(num + 1)
+        
+        result = prime(2)
+        print(result)
+
+        if(result):
+            print(f"{number} is prime number")
+        else:
+            print(f"{number} is not prime number")
+        
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice.lower() == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as e:
+    print(f"Invalid Input : {e}")
+
+except ZeroDivisionError as e:
+    print(f"Zero division exception : {e}")
+
+except Exception as e:
+    print(f"Exception caught : {e}")
+
