@@ -39,3 +39,41 @@ try:
     print(hcf)
 except:
     print("Something went wrong!!!")
+
+# method 3 - using exception and module based approach
+
+try:
+    while(True):
+
+        num1 = int(input("Enter positive integer value : "))
+        num2 = int(input("Enter positive integer value : "))
+        limit  = 1000
+
+        def eucledian_hcf(a):
+            if (a <= 0): return
+            global num1
+            temp = num1
+            num1 = a
+            eucledian_hcf(temp % a)
+
+        if (num1 == 0 or num2 == 0):
+            print("Enter positive integer value")
+        elif (num1 > limit or num2 > limit):
+            print("Input too large")
+        else:
+            eucledian_hcf(min(num2,num1))
+            print(f"HCF - {num1}")
+
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice.lower() == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as ve:
+    print(f"Invalid input - {ve}")
+
+except ZeroDivisionError as zde:
+    print(f"Zero Division Exception - {zde}")
+
+except Exception as e:
+    print(f"Exception caught - {e}")
