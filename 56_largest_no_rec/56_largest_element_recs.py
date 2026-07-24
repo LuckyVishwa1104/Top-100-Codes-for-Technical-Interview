@@ -27,3 +27,31 @@ try:
     print(maxx)
 except:
     print("Something went worng!!!")
+
+# method 3 - using recurssion and module based approach
+try:
+    print("Enter space separated element of array")
+    arr = list(map(int, input().split()))
+
+    largest = arr[0]
+    def largerst_element(num):
+        if (num == (len(arr) - 1)):
+                    return
+        global largest
+        if (arr[num] > largest):
+            largest = num
+        
+        largerst_element(num + 1)
+    largerst_element(0)
+
+    print(f"Laregest element of {arr} = {largest}")
+
+except ValueError as ve:
+    print(f"Invalid input - {ve}")
+
+except ZeroDivisionError as zde:
+    print(f"Zero Division Exception - {zde}")
+
+except Exception as e:
+    print(f"Exception caught - {e}")
+
