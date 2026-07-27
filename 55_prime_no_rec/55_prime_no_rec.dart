@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 void main() {
   try {
@@ -8,7 +9,7 @@ void main() {
 
       bool notPrime = true;
       void isPrime(num) {
-        if (num >= number) return; // terminating recursion
+        if (num > sqrt(number)) return; // terminating recursion
         if (number % num == 0) {
           notPrime = false;
         }

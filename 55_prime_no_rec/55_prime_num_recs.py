@@ -35,8 +35,7 @@ try:
     while (True):
         number = int(input("Enter number : "))
         def prime(num):
-            print(num)
-            if (num >= number):
+            if (num > (number)**(1/2)):
                 return True
             if (number % num == 0):
                 return False
