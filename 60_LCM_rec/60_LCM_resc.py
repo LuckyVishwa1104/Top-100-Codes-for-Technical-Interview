@@ -28,3 +28,33 @@ def func1(a):
     func1(a+1)
 func1(1)
 print(lcm)
+
+# method 2 - using exception handling
+
+try:
+    while(True):
+        num1 = int(input("Enter positive integer value : "))
+        num2 = int(input("Enter positive integer value : "))
+
+        def hcf(a, b):
+            if (b == 0):
+                return a
+            return hcf(b, a % b)
+
+        hcf1 = hcf(num1, num2)
+        lcm = (num1 * num2) // hcf1
+        print(f"LCM of {num1} and {num2} => {lcm}")
+
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice.lower() == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as ve:
+    print(f"Invalid input - {ve}")
+
+except ZeroDivisionError as zde:
+    print(f"Zero Division Exception - {zde}")
+
+except Exception as e:
+    print(f"Exception caught - {e}")
