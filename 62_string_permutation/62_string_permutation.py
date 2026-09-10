@@ -1,5 +1,4 @@
 # Python program to diaplay all possible sub string of a string
-
 try:
     str1 = input("Enter the string :")
     l1 = [""]
@@ -35,4 +34,31 @@ try:
 except:
     print("Enter a valid input!")
 
+# method 3 - using module based approach
+
+def sub_string(string):
+    all_sub_string = []
+    for i in range(len(string)):
+        for j in range(i+1, len(string)+1):
+            all_sub_string.append(string[i:j])
+    return all_sub_string
+try:
+    while(True):
+        ip_str = input("Enter String value : ")
+        result = sub_string(ip_str)
+        print(result)
+
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice.lower() == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as ve:
+    print(f"Invalid input - {ve}")
+
+except ZeroDivisionError as zde:
+    print(f"Zero Division Exception - {zde}")
+
+except Exception as e:
+    print(f"Exception caught - {e}")
 
