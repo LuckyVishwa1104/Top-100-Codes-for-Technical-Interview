@@ -58,3 +58,44 @@ try:
     print(summ)
 except:
     print("Enter a valid input!")
+
+# method 3 - using module based approach 
+
+def arr_sum(arr):
+    arr_total = 0
+    for i in arr:
+        arr_total = arr_total + i
+    return arr_total
+
+def subset_sum(arr):
+    final_sum = 0
+    for i in range(len(arr)):
+        temp_sum = 0
+        for j in range (i, len(arr)):
+            temp_sum = temp_sum + arr[j]
+            final_sum = final_sum + temp_sum
+    return final_sum
+
+try:
+    while(True):
+        arr = list(map(int,input("Enter space separated array elements : ").split(" ")))
+
+        if (len(arr) <= 10):
+            result = subset_sum(arr)
+            print(result)
+        else:
+            print("Input is too large.")
+
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice.lower() == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as ve:
+    print(f"Invalid input - {ve}")
+
+except ZeroDivisionError as zde:
+    print(f"Zero Division Exception - {zde}")
+
+except Exception as e:
+    print(f"Exception caught - {e}")
