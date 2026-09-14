@@ -29,9 +29,21 @@ except:
     print("Enter a valid input .")
 
 # method 3 - using exception handling
+
+def fact(num):
+    if (num <= 1): return 1
+    return num * fact(num - 1);
+
 try:
     while(True):
-        
+
+        num = int(input("Enter a number = "))
+
+        if (num <=10):
+            result = fact(num)
+            print(num)
+        else:
+            print("Input is too large")
 
         choice = input("Do you want to continue the program (y/n) : ")
         if(choice.lower() == "n"):
