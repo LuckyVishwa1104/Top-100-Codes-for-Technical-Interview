@@ -27,3 +27,22 @@ try:
     print(fac1)
 except:
     print("Enter a valid input .")
+
+# method 3 - using exception handling
+try:
+    while(True):
+        
+
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice.lower() == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as ve:
+    print(f"Invalid input - {ve}")
+
+except ZeroDivisionError as zde:
+    print(f"Zero Division Exception - {zde}")
+
+except Exception as e:
+    print(f"Exception caught - {e}")
