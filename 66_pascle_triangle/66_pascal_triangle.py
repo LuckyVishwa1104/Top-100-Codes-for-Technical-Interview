@@ -36,7 +36,7 @@ def func1(p1):
 func1(0)
 print("Recursion appraoch :",l3)
 
-# method 3 - using object oriented approach
+# # method 3 - using object oriented approach
 try:
     class PascalTriangle:
         def __init__(self,num):
@@ -89,3 +89,43 @@ try:
     pass
 except:
     print("Enter a valid input value!")
+
+# method 4 - using module based approach 
+
+def pascal_triangle(num):
+    pascal_list = []
+    for i in range(num):
+        current_list = []
+        for j in range(i+1):
+            if (j==0 or j==i):
+                current_list.append(1)
+            else:
+                current_list.append(pascal_list[i-1][j-1] + pascal_list[i-1][j])
+        pascal_list.append(current_list)
+    return pascal_list
+
+try:
+    while(True):
+
+        ip = int(input("Enter the number = "))
+
+        if (ip <=10):
+            result = pascal_triangle(ip)
+            print(result)
+        else:
+            print("Input is too large")
+
+        choice = input("Do you want to continue the program (y/n) : ")
+        if(choice.lower() == "n"):
+            print("Program finished!")
+            break
+
+except ValueError as ve:
+    print(f"Invalid input - {ve}")
+
+except ZeroDivisionError as zde:
+    print(f"Zero Division Exception - {zde}")
+
+except Exception as e:
+    print(f"Exception caught - {e}")
+
